@@ -2,6 +2,7 @@ import getData from './getData';
 import renderGoods from './renderGoods';
 import { categoryFilter } from './filters';
 
+
 const catalog = () => {
     const btnCatalog = document.querySelector('.catalog-button > button');
     const catalogModal = document.querySelector('.catalog');

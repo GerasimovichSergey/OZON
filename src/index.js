@@ -5,8 +5,8 @@ import catalog from './modules/catalog';
 import priceRangeFilter from './modules/priceRangeFilter';
 
 
-cart();
 load();
+cart();
 search();
 catalog();
 priceRangeFilter();

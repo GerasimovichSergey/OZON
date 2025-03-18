@@ -1,5 +1,6 @@
 import renderCart from './renderCart';
 import postData from './postData';
+import { setCartCount } from './cartCounter';
 
 
 const cart = () => {
@@ -43,6 +44,8 @@ const cart = () => {
             cart.push(goodsItem);
             
             localStorage.setItem('cart', JSON.stringify(cart));
+            
+            setCartCount();
         }
     });
     
@@ -60,6 +63,7 @@ const cart = () => {
             localStorage.setItem('cart', JSON.stringify(cart));
             
             renderCart(cart);
+            setCartCount();
             
             cartTotal.textContent = cart.reduce((sum, item) => {
                 return sum + item.price;
@@ -72,7 +76,10 @@ const cart = () => {
         
         postData(cart).then(() => {
             localStorage.removeItem('cart');
+            
             renderCart([]);
+            setCartCount();
+            
             cartTotal.textContent = '0';
         });
     });
