@@ -1,3 +1,3 @@
 # OZON
 
-Webpack + modules
+Webpack + modules + firebase (json goods list)
